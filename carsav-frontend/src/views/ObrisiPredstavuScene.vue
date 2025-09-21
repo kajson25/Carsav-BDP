@@ -27,7 +27,7 @@ export default {
   },
   async mounted() {
     try {
-      const response = await fetch('http://localhost:3000/api/predstave');
+      const response = await fetch('https://carsav-api.onrender.com/api/predstave');
       this.svePredstave = await response.json();
     } catch (error) {
       console.error('Greška pri učitavanju predstava:', error);
@@ -44,7 +44,7 @@ export default {
       }
       if (confirm('Da li ste sigurni da želite da obrišete ovu predstavu?')) {
         try {
-          await fetch(`http://localhost:3000/api/predstave/${this.predstavaIdZaBrisanje}`, {
+          await fetch(`https://carsav-api.onrender.com/api/predstave/${this.predstavaIdZaBrisanje}`, {
             method: 'DELETE'
           });
           this.goBack();

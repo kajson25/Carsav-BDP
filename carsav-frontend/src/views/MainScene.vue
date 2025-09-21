@@ -79,7 +79,7 @@ export default {
     async ucitajPredstave() {
       // ... (this method is unchanged)
       try {
-        const response = await fetch('http://localhost:3000/api/predstave');
+        const response = await fetch('https://carsav-api.onrender.com/api/predstave');
         if (!response.ok) throw new Error('Network response was not ok');
         this.svePredstave = await response.json();
       } catch (error) {
@@ -93,7 +93,7 @@ export default {
         return;
       }
       try {
-        const url = `http://localhost:3000/api/predstave/check-compatibility?p1=${this.izabranaPredstava1}&p2=${this.izabranaPredstava2}`;
+        const url = `https://carsav-api.onrender.com/api/predstave/check-compatibility?p1=${this.izabranaPredstava1}&p2=${this.izabranaPredstava2}`;
         const response = await fetch(url);
         const result = await response.json();
 
@@ -115,7 +115,7 @@ export default {
         return;
       }
       try {
-        let url = `http://localhost:3000/api/predstave/find-available?p1=${this.izabranaPredstava1}`;
+        let url = `https://carsav-api.onrender.com/api/predstave/find-available?p1=${this.izabranaPredstava1}`;
         if (this.izabranaPredstava2) {
           url += `&p2=${this.izabranaPredstava2}`;
         }

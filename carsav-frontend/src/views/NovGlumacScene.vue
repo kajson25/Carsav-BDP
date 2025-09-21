@@ -33,7 +33,7 @@ export default {
         return;
       }
       try {
-        await fetch('http://localhost:3000/api/glumci', {
+        await fetch('https://carsav-api.onrender.com/api/glumci', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ Ime: this.ime, Prezime: this.prezime })

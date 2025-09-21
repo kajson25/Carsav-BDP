@@ -48,7 +48,7 @@ export default {
   },
   async mounted() {
     try {
-      const response = await fetch('http://localhost:3000/api/glumci');
+      const response = await fetch('https://carsav-api.onrender.com/api/glumci');
       this.sviGlumci = await response.json();
     } catch (error) {
       console.error('Greška pri učitavanju glumaca:', error);
@@ -86,7 +86,7 @@ export default {
           glumciIds: this.izabraniGlumci.map(g => g.Id) // Extract just the IDs
         };
 
-        await fetch('http://localhost:3000/api/predstave', {
+        await fetch('https://carsav-api.onrender.com/api/predstave', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
