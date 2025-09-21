@@ -1,4 +1,13 @@
-// This one line now correctly imports the connection AND all fully-associated models
+const path = require('path');
+const envPath = path.resolve(__dirname, '..', '.env');
+const result = require('dotenv').config({ path: envPath });
+
+if (result.error) {
+  console.error("--- DOTENV FAILED TO LOAD .env FILE ---");
+  throw result.error;
+}
+console.log("✅ .env file loaded successfully. Variables:", result.parsed);
+
 const db = require('../models');
 
 const data = [
